@@ -57,31 +57,55 @@ $lArray = array(1,[2,3,4],5,6);
 // var_dump($lArray);
 
 $ad = array("Lokesh" => "Kumawat");
-array_push($ad, "Anushka");
+// array_push($ad, "Anushka");
 // echo $ad["lokesh"];
 
-foreach($ad as $key=>$value){
+foreach($ad as &$key){
     // echo "<div style='color:blue;cursor:pointer'>$key  $value</div>";
+    $key = "Anushka";
 }
+unset($key);
 
+$key = "Lokesh";
+// var_dump($ad);
+// echo $ad["Lokesh"];
 
 $myArray02= [1,2,3,4,5, "lokesh"=>"Anushka"];
 
 // echo $myArray02["lokesh"];
 
 
+// unset($myArray02[1]);
+
+// echo $myArray02[1];
+
+array_splice($myArray02,array_search("lokesh", array_keys($myArray02)),1);
+
+// echo $myArray02["lokesh"];
+
+// echo "lokesh kumawat";
+
+
+// PHP 7.4 and later
+$add = fn($a, $b) => $a + $b;
+
+// Usage
+$result = $add(3, 4);
+// echo $result; // Outputs 7
 
 
 
 
+$l = 90;
+
+function Lo(){echo $GLOBALS['l'];}
+
+Lo();
 
 
-
-
-
-
-
-
+if(false){
+    echo $l;
+}
 
 
 
