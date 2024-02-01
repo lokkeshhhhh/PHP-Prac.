@@ -98,19 +98,21 @@ $result = $add(3, 4);
 
 $l = 90;
 
-function Lo(){echo $GLOBALS['l'];}
+function Lo(){
+    echo $GLOBALS['l'];
+}
 
-Lo();
+// Lo();
 
 
 if(false){
     echo $l;
 }
 
+date_default_timezone_set("Asia/Kolkata");
 
 
-
-
+echo date("y-m-d , h:i:s a");
 
 
 
