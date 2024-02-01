@@ -1,5 +1,4 @@
-
-  <?php
+<?php
 
 // <!-- ### Easy Section:
 
@@ -123,65 +122,135 @@
 // 11. **Palindrome Check:**
 //     - Create a PHP function to check if a given string is a palindrome.
 
-    
+    $plString = "ANUSHKAAKHSUNA";
+    $noplString = "Anushka";
 
+    function plCheck($string){
+        $rString = "";
+        for ($i=strlen($string)-1; $i>=0; $i--){ 
+            $rString = $rString.$string[$i];
+        }
+        echo $rString."<br>";
+        echo $string."<br>";
+        if($rString==$string){
+            echo "The given string is palindrome."."<br><br>";
+        }else{
+            echo "The given string is not palindrome."."<br><br>";
+        }
+    }
+
+
+    plCheck($plString);
 // 12. **String Parsing:**
 //     - Parse a string containing a comma-separated list of names and display each name on a new line.
+
+    $nameString = "Lokesh, Vishal, Rajesh, Raj, Dharam, Bahubali, Bali";
+
+    $nameArray = explode(",",$nameString);
+
+    foreach($nameArray as $name){
+        echo $name."<br><br>";
+    }
 
 // 13. **URL Encoding and Decoding:**
 //     - Explain the purpose of URL encoding in PHP and provide an example of encoding and decoding.
 
+    echo urlencode($result)."<br><br>";
+
 // 14. **Regular Expressions:**
 //     - Use a regular expression to validate if a string is a valid email address.
+
+    // $pattern = /^[a-zA-Z0-9-_.]+@[a-zA-z0-9.-]+\.[a-zA-z]{2,}$/;
 
 // 15. **String Compression:**
 //     - Implement a simple string compression algorithm in PHP.
 
+    function Compression($inputString){
+        $compressionString = "";
+        $length = strlen($inputString);
+
+        if($length<=1){
+            return $inputString;
+        }
+
+
+        $crChar = $inputString[0];
+        $count = 1;
+
+        for ($i=1; $i<$length ; $i++) { 
+            if($inputString[$i]===$crChar){
+                $count++;
+            }else{
+                $compressionString .= $crChar.$count;
+
+                $crChar = $inputString[$i];
+                $count = 1;
+            }
+        }
+
+        $compressionString .= $crChar.$count;
+
+        if($length<=1){
+            echo $inputString;
+        }else{
+            echo $compressionString;
+        }
+    }
+
+
+    $stringC = "AAAABBBBAAAAKKAKAKAJDKDMC";
+
+    Compression($stringC);
 // 16. **Multiple Occurrences:**
 //     - Write a PHP function to find all occurrences of a specific word in a given string.
+    echo "<br><br><br><br>";
 
+    $pattern = "/ain/";
+    $string6 = "locain detain certain tain ";
+
+    echo preg_match_all($pattern, $string6);
+
+
+    echo "<br><br><br><br>";
 // 17. **String Encryption:**
 //     - Develop a basic encryption function to encrypt a string and decrypt it back to its original form.
 
+    
+
+echo "<br><br><br><br>";
 // 18. **Random String Generation:**
 //     - Generate a random alphanumeric string of a given length using PHP.
 
+    
+
+    function rString($length){
+        $pattern1 = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        $rString = "";
+        for ($i=0; $i <$length ; $i++) { 
+            $rString .= $pattern1[rand(0,35)];
+        }
+
+        echo  $rString;
+    }
+
+    rString(10);
+
+echo "<br><br><br><br>";
 // 19. **CSV to Array:**
 //     - Convert a CSV string into an associative array in PHP.
 
+    // $nameArray;
+
+    
+
+
+echo "<br><br><br><br>";
 // 20. **HTML Special Characters:**
 //     - Explain the importance of `htmlspecialchars()` in PHP when working with user input in HTML forms.
 
-// ### Hard Section:
 
-// 21. **Levenshtein Distance:**
-//     - Implement a PHP function to calculate the Levenshtein distance between two strings.
 
-// 22. **Unicode Handling:**
-//     - Discuss the challenges and solutions for handling Unicode characters in PHP strings.
 
-// 23. **Multipart String Manipulation:**
-//     - Manipulate a string that contains multiple sections, each separated by a specific delimiter.
-
-// 24. **Longest Common Substring:**
-//     - Write a PHP function to find the longest common substring between two strings.
-
-// 25. **String Internals:**
-//     - Explain the internal representation of strings in PHP, including the concept of copy-on-write.
-
-// 26. **Multibyte String Operations:**
-//     - Discuss the significance of multibyte string functions in PHP and provide an example of their usage.
-
-// 27. **Binary String Operations:**
-//     - Perform binary string operations in PHP, such as bitwise AND, OR, XOR on binary strings.
-
-// 28. **Custom String Formatting:**
-//     - Create a PHP function for custom formatting of a string based on specified patterns.
-
-// 29. **Custom Comparison Algorithm:**
-//     - Implement a custom string comparison algorithm that considers both alphabetical and numerical values.
-
-// 30. **Recursive String Operations:**
-//     - Develop a recursive PHP function to perform operations on nested strings or arrays. -->
+echo "<br><br><br><br>";
 
 ?>
