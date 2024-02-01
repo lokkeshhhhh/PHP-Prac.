@@ -92,46 +92,112 @@ echo "<br><br>";
 // 10. **Array Unique Values:**
 //     - Remove duplicate values from an array using the `array_unique()` function.
 
-    
+    // array_unique($array2);
+
+    var_dump(array_unique($array2));
 
 echo "<br><br>";
 // ### Moderate Section:
 
 // 11. **Array Slicing:**
 //     - Create a subset of an array by slicing it from index 2 to 5.
+
+    var_dump(array_slice($array1,2,2));
+
 echo "<br><br>";
 // 12. **Multidimensional Array:**
 //     - Declare and print a multidimensional array representing a matrix.
+
+    $arrayMatrix = [[11,12,13],[21,22,23],[31,32,33]];
+
+    foreach($arrayMatrix as $V){
+        echo "[";
+        foreach($V as $v){
+            echo " $v ";
+        }
+        echo "]";
+        echo "<br>";
+        
+    }
+
 echo "<br><br>";
 // 13. **Array Search:**
 //     - Search for a specific element in an array and print its index.
+
+    foreach($array1 as $k => $v){
+        if($v==77){
+            echo $k;
+        }
+    }
+
 echo "<br><br>";
 // 14. **Array Filtering:**
 //     - Use the `array_filter()` function to filter out even numbers from an array.
+
+    array_filter($array1, function($value){
+        if($value%2==0){
+            echo $value."<br>";
+        }
+    });
+
 echo "<br><br>";
 // 15. **Array Key Sorting:**
 //     - Sort an associative array based on keys using the `ksort()` function.
+ksort($arrayAs);
+    var_dump($arrayAs);
+
 echo "<br><br>";
 // 16. **Array Chunking:**
 //     - Split an array into chunks of size 3 using the `array_chunk()` function.
+
+    array_chunk($array2, 3);
+
+    var_dump(array_chunk($array2, 3));
+
 echo "<br><br>";
 // 17. **Array Intersection:**
 //     - Find the common elements between two arrays using the `array_intersect()` function.
+
+    $array3 = [1,2,3,455,66,465,46,3];
+
+    var_dump(array_intersect($array3, $array1));
+
 echo "<br><br>";
 // 18. **Array Reverse:**
 //     - Reverse the order of elements in an array using the `array_reverse()` function.
+
+    array_reverse($array3);
+
+    var_dump(array_reverse($array3));
+
+
 echo "<br><br>";
 // 19. **Array Replace:**
 //     - Replace values in one array with values from another array using the `array_replace()` function.
+
+    array_replace($array1, $array2);
+
+    var_dump(array_replace($array2, $array1));
+
 echo "<br><br>";
 // 20. **Array Shuffle:**
 //     - Shuffle the elements of an array using the `shuffle()` function.
-echo "<br><br>";
-// ### Hard Section:
+shuffle($array1);
+var_dump($array1);
 
+echo "<br><br>";echo "<br><br>";echo "<br><br>";
+// ### Hard Section:
+echo "hard";
+echo "<br><br>";echo "<br><br>";echo "<br><br>";
 // 21. **Array Map Function:**
 //     - Use the `array_map()` function to square each element of an array.
+array_map(function($value){
+    return $value*$value;
+},$array1);
 
+var_dump(array_map(function($value){
+    return $value*$value;
+},$array1));
 // 22. **Recursive Array Operations:**
 //     - Perform a recursive operation on a nested array, such as counting all elements.
 
@@ -158,17 +224,4 @@ echo "<br><br>";
 
 // 30. **Array Iterator:**
 //     - Use the `ArrayIterator` class to iterate over the elements of an array and print them.
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
